@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+{{ request }}
+{{ request.user }}
+{% if request.user.is_authenticated %}
+<h1>log out</h1>
+<form action="{% url 'simpleauthexample:logout' %}" method="POST"> {% csrf_token %}
+    <button type="submit" name="submit" value="submit-value">Log Out</button>
+</form>
+
+{% endif %}
+I'm secure.
+</body>
+</html>
